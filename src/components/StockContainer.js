@@ -1,13 +1,10 @@
-import React from "react";
 import Stock from "./Stock";
 
-function StockContainer() {
+export default function StockContainer({stocks, handleBuy}) {
   return (
     <div>
       <h2>Stocks</h2>
-      {/* render stock list here*/}
+      {stocks.map(stock => <Stock id={stock.id} key={stock.id} stock={stock} handleBuy={handleBuy} />)}
     </div>
   );
 }
-
-export default StockContainer;

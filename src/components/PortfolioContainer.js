@@ -1,15 +1,12 @@
-import React from "react";
-import Stock from "./Stock";
+import Stock from './Stock'
 
-function PortfolioContainer() {
-  return (
-    <div>
-      <h2>My Portfolio</h2>
-      {
-        //render your portfolio stocks here
-      }
-    </div>
-  );
+export default function PortfolioContainer({ portfolio, handleSell }) {
+	return (
+		<div>
+			<h2>My Portfolio</h2>
+			{portfolio.map((stock) => (
+				<Stock id={stock.id} key={stock.id} stock={stock} handleSell={handleSell} />
+			))}
+		</div>
+	)
 }
-
-export default PortfolioContainer;
